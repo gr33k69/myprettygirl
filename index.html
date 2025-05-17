@@ -3,13 +3,16 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Happy Anniversary Mamas</title>
+  <title>Happy Anniversary Warona 💖</title>
   <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+  <link rel="icon" href="https://upload.wikimedia.org/wikipedia/en/0/05/Hello_Kitty_character_portrait.png" type="image/png">
   <style>
     body {
       margin: 0;
       padding: 0;
-      background: linear-gradient(to bottom right, #f9e2f4, #e3d5f5);
+      background-image: url('https://wallpapercave.com/wp/wp2843042.jpg');
+      background-size: cover;
+      background-attachment: fixed;
       font-family: 'Poppins', sans-serif;
       color: #5a2a83;
       overflow-x: hidden;
@@ -30,18 +33,28 @@
       font-size: 1.2rem;
       text-align: center;
       padding: 20px;
-      background-color: rgba(255, 255, 255, 0.7);
+      background-color: rgba(255, 255, 255, 0.85);
       border-radius: 15px;
       box-shadow: 0 4px 20px rgba(0,0,0,0.1);
     }
 
-    .lily {
+    .lily, .heart {
       position: absolute;
       width: 60px;
       height: 60px;
-      background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Lilium_candidum1.jpg/120px-Lilium_candidum1.jpg');
       background-size: cover;
       animation: floatUp 10s infinite ease-in;
+    }
+
+    .lily {
+      background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Lilium_candidum1.jpg/120px-Lilium_candidum1.jpg');
+    }
+
+    .heart {
+      background-image: url('https://pngimg.com/uploads/heart/heart_PNG51337.png');
+      width: 40px;
+      height: 40px;
+      animation-duration: 12s;
     }
 
     @keyframes floatUp {
@@ -58,13 +71,20 @@
       }
     }
 
+    .countdown {
+      text-align: center;
+      margin-top: 20px;
+      font-size: 1.1rem;
+      color: #6b2d84;
+    }
+
     iframe {
       display: none;
     }
   </style>
 </head>
 <body>
-  <h1>Happy Anniversary Mamas</h1>
+  <h1>Happy Anniversary Warona 💖</h1>
   <div class="message">
     <p>
       4 months in and I still get that same feeling like it’s the first time we started talking.
@@ -74,7 +94,11 @@
     </p>
   </div>
 
-  <!-- Lilies -->
+  <div class="countdown">
+    Time since we started: <span id="timer"></span>
+  </div>
+
+  <!-- Floating Elements Script -->
   <script>
     for (let i = 0; i < 25; i++) {
       const lily = document.createElement('div');
@@ -84,9 +108,32 @@
       lily.style.opacity = Math.random();
       document.body.appendChild(lily);
     }
+
+    for (let i = 0; i < 15; i++) {
+      const heart = document.createElement('div');
+      heart.classList.add('heart');
+      heart.style.left = Math.random() * 100 + 'vw';
+      heart.style.animationDelay = Math.random() * 6 + 's';
+      heart.style.opacity = Math.random();
+      document.body.appendChild(heart);
+    }
+
+    // Countdown Timer (start date: 2024-01-17 for example)
+    const startDate = new Date("2024-01-17T00:00:00");
+    function updateTimer() {
+      const now = new Date();
+      const diff = now - startDate;
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+      const minutes = Math.floor((diff / (1000 * 60)) % 60);
+      const seconds = Math.floor((diff / 1000) % 60);
+      document.getElementById("timer").innerText = `${days} days, ${hours}h ${minutes}m ${seconds}s`;
+    }
+    setInterval(updateTimer, 1000);
   </script>
 
   <!-- YouTube Music Embed (Muted Autoplay Trick) -->
   <iframe width="0" height="0" src="https://www.youtube.com/embed/4NYGgJlY3Uw?autoplay=1&mute=1&loop=1&playlist=4NYGgJlY3Uw" frameborder="0" allow="autoplay"></iframe>
 </body>
 </html>
+
