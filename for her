@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy Anniversary Mamas</title>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to bottom right, #f9e2f4, #e3d5f5);
+      font-family: 'Poppins', sans-serif;
+      color: #5a2a83;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    h1 {
+      font-family: 'Pacifico', cursive;
+      font-size: 3rem;
+      text-align: center;
+      margin-top: 50px;
+      color: #d63384;
+    }
+
+    .message {
+      max-width: 700px;
+      margin: 30px auto;
+      font-size: 1.2rem;
+      text-align: center;
+      padding: 20px;
+      background-color: rgba(255, 255, 255, 0.7);
+      border-radius: 15px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    }
+
+    .lily {
+      position: absolute;
+      width: 60px;
+      height: 60px;
+      background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Lilium_candidum1.jpg/120px-Lilium_candidum1.jpg');
+      background-size: cover;
+      animation: floatUp 10s infinite ease-in;
+    }
+
+    @keyframes floatUp {
+      0% {
+        transform: translateY(100vh) scale(0.5);
+        opacity: 0;
+      }
+      30% {
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-10vh) scale(1);
+        opacity: 0;
+      }
+    }
+
+    iframe {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <h1>Happy Anniversary Mamas</h1>
+  <div class="message">
+    <p>
+      4 months in and I still get that same feeling like it’s the first time we started talking.
+      First off, I’d like to thank you for being the light in this dim world of mine and especially for being patient with me.
+      I love you so much and I hope you’ll let me love you till time stands still.
+      I made this website as a little show of appreciation. And I want you to remember that you're it for me mama, always.
+    </p>
+  </div>
+
+  <!-- Lilies -->
+  <script>
+    for (let i = 0; i < 25; i++) {
+      const lily = document.createElement('div');
+      lily.classList.add('lily');
+      lily.style.left = Math.random() * 100 + 'vw';
+      lily.style.animationDelay = Math.random() * 5 + 's';
+      lily.style.opacity = Math.random();
+      document.body.appendChild(lily);
+    }
+  </script>
+
+  <!-- YouTube Music Embed (Muted Autoplay Trick) -->
+  <iframe width="0" height="0" src="https://www.youtube.com/embed/4NYGgJlY3Uw?autoplay=1&mute=1&loop=1&playlist=4NYGgJlY3Uw" frameborder="0" allow="autoplay"></iframe>
+</body>
+</html>
