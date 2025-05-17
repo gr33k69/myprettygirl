@@ -10,7 +10,7 @@
     body {
       margin: 0;
       padding: 0;
-      background-image: url('https://wallpapercave.com/wp/wp2843042.jpg');
+      background-image: url('https://i.pinimg.com/originals/ef/cc/3e/efcc3e8e8f07353c9281a328c0b5dd80.jpg');
       background-size: cover;
       background-attachment: fixed;
       font-family: 'Poppins', sans-serif;
@@ -24,7 +24,7 @@
       font-size: 3rem;
       text-align: center;
       margin-top: 50px;
-      color: #d63384;
+      color: #ff1493;
     }
 
     .message {
@@ -33,12 +33,12 @@
       font-size: 1.2rem;
       text-align: center;
       padding: 20px;
-      background-color: rgba(255, 255, 255, 0.85);
+      background-color: rgba(255, 255, 255, 0.95);
       border-radius: 15px;
       box-shadow: 0 4px 20px rgba(0,0,0,0.1);
     }
 
-    .lily, .heart {
+    .lily, .heart, .kitty {
       position: absolute;
       width: 60px;
       height: 60px;
@@ -55,6 +55,13 @@
       width: 40px;
       height: 40px;
       animation-duration: 12s;
+    }
+
+    .kitty {
+      background-image: url('https://upload.wikimedia.org/wikipedia/en/0/05/Hello_Kitty_character_portrait.png');
+      width: 50px;
+      height: 50px;
+      animation-duration: 14s;
     }
 
     @keyframes floatUp {
@@ -74,12 +81,26 @@
     .countdown {
       text-align: center;
       margin-top: 20px;
-      font-size: 1.1rem;
-      color: #6b2d84;
+      font-size: 1.2rem;
+      color: #7a219c;
     }
 
-    iframe {
-      display: none;
+    .music-button {
+      display: block;
+      margin: 30px auto;
+      padding: 12px 25px;
+      font-size: 1rem;
+      background-color: #ff69b4;
+      color: white;
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      transition: background-color 0.3s;
+    }
+
+    .music-button:hover {
+      background-color: #ff1493;
     }
   </style>
 </head>
@@ -97,6 +118,9 @@
   <div class="countdown">
     Time since we started: <span id="timer"></span>
   </div>
+
+  <button class="music-button" onclick="document.getElementById('audio').play()">💗 Play Persian Rugs 💗</button>
+  <audio id="audio" src="https://dl.sndup.net/9vhg/PARTYNEXTDOOR%20-%20Persian%20Rugs.mp3"></audio>
 
   <!-- Floating Elements Script -->
   <script>
@@ -118,8 +142,17 @@
       document.body.appendChild(heart);
     }
 
-    // Countdown Timer (start date: 2024-01-17 for example)
-    const startDate = new Date("2024-01-17T00:00:00");
+    for (let i = 0; i < 10; i++) {
+      const kitty = document.createElement('div');
+      kitty.classList.add('kitty');
+      kitty.style.left = Math.random() * 100 + 'vw';
+      kitty.style.animationDelay = Math.random() * 8 + 's';
+      kitty.style.opacity = Math.random();
+      document.body.appendChild(kitty);
+    }
+
+    // Countdown Timer (start date: 2025-01-18T08:35)
+    const startDate = new Date("2025-01-18T08:35:00");
     function updateTimer() {
       const now = new Date();
       const diff = now - startDate;
@@ -131,9 +164,6 @@
     }
     setInterval(updateTimer, 1000);
   </script>
-
-  <!-- YouTube Music Embed (Muted Autoplay Trick) -->
-  <iframe width="0" height="0" src="https://www.youtube.com/embed/4NYGgJlY3Uw?autoplay=1&mute=1&loop=1&playlist=4NYGgJlY3Uw" frameborder="0" allow="autoplay"></iframe>
 </body>
 </html>
 
