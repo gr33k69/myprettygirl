@@ -72,75 +72,41 @@
     }
 
     @keyframes floatUp {
-  0% {
-    transform: translateY(100vh) scale(0.5);
-    opacity: 0;
-  }
-  25% {
-    opacity: 1;
-  }
-  50% {
-    transform: translateY(-50vh) scale(1);
-    opacity: 1;
-  }
-  100% {
-    transform: translateY(-100vh) scale(1);
-    opacity: 0;
-  }
-}
-  20% {
-    opacity: 1;
-  }
-  50% {
-    transform: translateY(-50vh) scale(1);
-    opacity: 1;
-  }
-  100% {
-    transform: translateY(-100vh) scale(1);
-    opacity: 0;
-  }
-}
-  20% {
-    opacity: 1;
-  }
-  50% {
-    transform: translateY(0) scale(1);
-    opacity: 1;
-  }
-  100% {
-    transform: translateY(-100vh) scale(1);
-    opacity: 0;
-  }
-}
-      30% {
+      0% {
+        transform: translateY(100vh) scale(0.5);
+        opacity: 0;
+      }
+      25% {
+        opacity: 1;
+      }
+      50% {
+        transform: translateY(-50vh) scale(1);
         opacity: 1;
       }
       100% {
-        transform: translateY(-10vh) scale(1);
+        transform: translateY(-100vh) scale(1);
         opacity: 0;
       }
     }
 
     .countdown {
-  text-align: center;
-  margin: 25px auto;
-  font-size: 1.3rem;
-  font-weight: 600;
-  color: #5b0b75;
-  background-color: #fff0fb;
-  padding: 15px 25px;
-  border: 3px dashed #d63384;
-  border-radius: 12px;
-  width: fit-content;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
+      text-align: center;
+      margin: 25px auto;
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: #5b0b75;
+      background-color: #fff0fb;
+      padding: 15px 25px;
+      border: 3px dashed #d63384;
+      border-radius: 12px;
+      width: fit-content;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
   </style>
-    
-</style>
 </head>
 <body>
-  
   <h1>Happy Anniversary Warona 💖</h1>
+
   <div class="message">
     <p>
       4 months in and I still get that same feeling like it’s the first time we started talking.
@@ -150,14 +116,13 @@
     </p>
   </div>
 
-  <img src="https://media.newyorker.com/photos/59095c67ebe912338a37455d/master/pass/Stokes-Hello-Kitty2.jpg" alt="Hello Kitty" class="hello-kitty-img" />
+  <img src="https://media.newyorker.com/photos/59095c67ebe912338a37455d/master/pass/Stokes-Hello-Kitty2.jpg"
+       alt="Hello Kitty" class="hello-kitty-img" />
 
   <div class="countdown">
-  Time since we started: <span id="timer"></span>
-</div>
-</div>
+    Time since we started: <span id="timer"></span>
+  </div>
 
-  <!-- Floating Elements Script -->
   <script>
     function createFloatingElement(className, total, delayRange) {
       for (let i = 0; i < total; i++) {
@@ -170,7 +135,7 @@
       }
     }
 
-        createFloatingElement('heart', 20, 8);
+    createFloatingElement('heart', 20, 8);
     createFloatingElement('kitty', 12, 10);
 
     const startDate = new Date("2025-01-18T08:35:00");
@@ -183,17 +148,8 @@
       const seconds = Math.floor((diff / 1000) % 60);
       document.getElementById("timer").innerText = `${days} days, ${hours}h ${minutes}m ${seconds}s`;
     }
+
     setInterval(updateTimer, 1000);
-
-    // Hide popup after 5 seconds
-    setTimeout(() => {
-      document.getElementById('popup').classList.add('hidden');
-    }, 5000);
   </script>
-  
-
-$1
+</body>
 </html>
-
-
-
