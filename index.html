@@ -10,57 +10,57 @@
     body {
       margin: 0;
       padding: 0;
-      background: linear-gradient(135deg, #ffe6f0, #ffc3e0, #ff9ad5);
-      background-size: cover;
+      background: linear-gradient(135deg, #ffccf9, #ffc9e3, #f6a5d6);
       font-family: 'Poppins', sans-serif;
-      color: #5a2a83;
+      color: #81258a;
       overflow-x: hidden;
       position: relative;
     }
 
     h1 {
       font-family: 'Pacifico', cursive;
-      font-size: 3rem;
+      font-size: 3.2rem;
       text-align: center;
       margin-top: 50px;
-      color: #ff1493;
+      color: #d63384;
     }
 
     .message {
-      max-width: 700px;
+      max-width: 750px;
       margin: 30px auto;
-      font-size: 1.2rem;
+      font-size: 1.3rem;
       text-align: center;
-      padding: 20px;
-      background-color: rgba(255, 255, 255, 0.95);
-      border-radius: 15px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      padding: 25px;
+      background-color: rgba(255, 255, 255, 0.98);
+      border-radius: 20px;
+      box-shadow: 0 6px 25px rgba(0,0,0,0.15);
     }
 
     .lily, .heart, .kitty {
       position: absolute;
-      width: 60px;
-      height: 60px;
-      background-size: cover;
-      animation: floatUp 10s infinite ease-in;
+      background-size: contain;
+      background-repeat: no-repeat;
+      animation: floatUp 12s infinite ease-in;
     }
 
     .lily {
+      width: 60px;
+      height: 60px;
       background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Lilium_candidum1.jpg/120px-Lilium_candidum1.jpg');
     }
 
     .heart {
+      width: 45px;
+      height: 45px;
       background-image: url('https://pngimg.com/uploads/heart/heart_PNG51337.png');
-      width: 40px;
-      height: 40px;
-      animation-duration: 12s;
+      animation-duration: 14s;
     }
 
     .kitty {
-      background-image: url('https://i.pinimg.com/originals/e5/b0/85/e5b085ef90f63780bc547bfb43119847.png');
-      width: 50px;
-      height: 50px;
-      animation-duration: 14s;
+      width: 55px;
+      height: 55px;
+      background-image: url('https://i.pinimg.com/originals/8e/9b/6e/8e9b6e540f9849d12a9619e7fcd7f46d.png');
+      animation-duration: 16s;
     }
 
     @keyframes floatUp {
@@ -79,9 +79,10 @@
 
     .countdown {
       text-align: center;
-      margin-top: 20px;
-      font-size: 1.2rem;
-      color: #7a219c;
+      margin-top: 25px;
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: #5b0b75;
     }
   </style>
 </head>
@@ -102,34 +103,21 @@
 
   <!-- Floating Elements Script -->
   <script>
-    for (let i = 0; i < 25; i++) {
-      const lily = document.createElement('div');
-      lily.classList.add('lily');
-      lily.style.left = Math.random() * 100 + 'vw';
-      lily.style.animationDelay = Math.random() * 5 + 's';
-      lily.style.opacity = Math.random();
-      document.body.appendChild(lily);
+    function createFloatingElement(className, total, delayRange) {
+      for (let i = 0; i < total; i++) {
+        const el = document.createElement('div');
+        el.classList.add(className);
+        el.style.left = Math.random() * 100 + 'vw';
+        el.style.animationDelay = Math.random() * delayRange + 's';
+        el.style.opacity = Math.random();
+        document.body.appendChild(el);
+      }
     }
 
-    for (let i = 0; i < 15; i++) {
-      const heart = document.createElement('div');
-      heart.classList.add('heart');
-      heart.style.left = Math.random() * 100 + 'vw';
-      heart.style.animationDelay = Math.random() * 6 + 's';
-      heart.style.opacity = Math.random();
-      document.body.appendChild(heart);
-    }
+    createFloatingElement('lily', 25, 6);
+    createFloatingElement('heart', 20, 8);
+    createFloatingElement('kitty', 12, 10);
 
-    for (let i = 0; i < 10; i++) {
-      const kitty = document.createElement('div');
-      kitty.classList.add('kitty');
-      kitty.style.left = Math.random() * 100 + 'vw';
-      kitty.style.animationDelay = Math.random() * 8 + 's';
-      kitty.style.opacity = Math.random();
-      document.body.appendChild(kitty);
-    }
-
-    // Countdown Timer (start date: 2025-01-18T08:35)
     const startDate = new Date("2025-01-18T08:35:00");
     function updateTimer() {
       const now = new Date();
@@ -144,4 +132,5 @@
   </script>
 </body>
 </html>
+
 
