@@ -98,15 +98,54 @@
     }
 
     .countdown {
-      text-align: center;
-      margin-top: 25px;
-      font-size: 1.3rem;
-      font-weight: 600;
-      color: #5b0b75;
-    }
+  text-align: center;
+  margin: 25px auto;
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #5b0b75;
+  background-color: #fff0fb;
+  padding: 15px 25px;
+  border: 3px dashed #d63384;
+  border-radius: 12px;
+  width: fit-content;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
   </style>
+    .lily-popup {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: #fff0f8;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+    }
+
+    .lily-popup img {
+      width: 200px;
+      animation: fadeOut 3s ease-in-out forwards;
+      animation-delay: 2s;
+    }
+
+    @keyframes fadeOut {
+      to {
+        opacity: 0;
+        transform: scale(0.5);
+      }
+    }
+
+    .hidden {
+      display: none !important;
+    }
+</style>
 </head>
 <body>
+  <div class="lily-popup" id="popup">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Lilium_candidum1.jpg/120px-Lilium_candidum1.jpg" alt="Lily">
+  </div>
   <h1>Happy Anniversary Warona 💖</h1>
   <div class="message">
     <p>
@@ -117,7 +156,7 @@
     </p>
   </div>
 
-  <img src="https://upload.wikimedia.org/wikipedia/en/0/05/Hello_Kitty_character_portrait.png" alt="Hello Kitty" class="hello-kitty-img" />
+  <img src="https://media.newyorker.com/photos/59095c67ebe912338a37455d/master/pass/Stokes-Hello-Kitty2.jpg" alt="Hello Kitty" class="hello-kitty-img" />
 
   <div class="countdown">
     Time since we started: <span id="timer"></span>
@@ -151,8 +190,17 @@
       document.getElementById("timer").innerText = `${days} days, ${hours}h ${minutes}m ${seconds}s`;
     }
     setInterval(updateTimer, 1000);
+
+    // Hide popup after 5 seconds
+    setTimeout(() => {
+      document.getElementById('popup').classList.add('hidden');
+    }, 5000);
   </script>
-</body>
+  <audio id="popup-sound" autoplay>
+    <source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_4d1d9f1d81.mp3?filename=bells-5992.mp3" type="audio/mpeg">
+  </audio>
+
+$1
 </html>
 
 
