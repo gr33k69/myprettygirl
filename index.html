@@ -10,9 +10,8 @@
     body {
       margin: 0;
       padding: 0;
-      background-image: url('https://i.pinimg.com/originals/ef/cc/3e/efcc3e8e8f07353c9281a328c0b5dd80.jpg');
+      background: linear-gradient(135deg, #ffe6f0, #ffc3e0, #ff9ad5);
       background-size: cover;
-      background-attachment: fixed;
       font-family: 'Poppins', sans-serif;
       color: #5a2a83;
       overflow-x: hidden;
@@ -58,7 +57,7 @@
     }
 
     .kitty {
-      background-image: url('https://upload.wikimedia.org/wikipedia/en/0/05/Hello_Kitty_character_portrait.png');
+      background-image: url('https://i.pinimg.com/originals/e5/b0/85/e5b085ef90f63780bc547bfb43119847.png');
       width: 50px;
       height: 50px;
       animation-duration: 14s;
@@ -84,24 +83,6 @@
       font-size: 1.2rem;
       color: #7a219c;
     }
-
-    .music-button {
-      display: block;
-      margin: 30px auto;
-      padding: 12px 25px;
-      font-size: 1rem;
-      background-color: #ff69b4;
-      color: white;
-      border: none;
-      border-radius: 25px;
-      cursor: pointer;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-      transition: background-color 0.3s;
-    }
-
-    .music-button:hover {
-      background-color: #ff1493;
-    }
   </style>
 </head>
 <body>
@@ -118,9 +99,6 @@
   <div class="countdown">
     Time since we started: <span id="timer"></span>
   </div>
-
-  <button class="music-button" onclick="document.getElementById('audio').play()">💗 Play Persian Rugs 💗</button>
-  <audio id="audio" src="https://dl.sndup.net/9vhg/PARTYNEXTDOOR%20-%20Persian%20Rugs.mp3"></audio>
 
   <!-- Floating Elements Script -->
   <script>
